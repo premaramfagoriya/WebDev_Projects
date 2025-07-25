@@ -1,9 +1,9 @@
 ﻿import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    plugins: [plugin()],
+    plugins: [react()],
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -11,15 +11,12 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/weatherforecast': {
-                target: 'https://localhost:7136',
-                secure: false
+            '/api': {
+                target: 'https://localhost:7136', // Update if needed
+                secure: false,
+                changeOrigin: true
             }
         },
-        port: 64033,
-        https: process.env.NODE_ENV === 'development' ? {
-            key: './certs/key.pem',
-            cert: './certs/cert.pem'
-        } : false
+        port: 64033
     }
 });
