@@ -1,0 +1,140 @@
+.track-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background-color: #f8f9fc;
+    border-radius: 16px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+    .track-header h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1d3557;
+    }
+
+.close-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.grievance-card {
+    background: linear-gradient(to bottom right, #ffffff, #f1f3f9);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 6px solid #ccc;
+}
+
+    .grievance-card:hover {
+        transform: translateY(-4px);
+    }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.card-body p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.emp-no {
+    font-weight: bold;
+    color: #1d3557;
+    font-size: 15px;
+}
+
+.badge {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+    .badge.pending {
+        background-color: #ffe0e3;
+        color: #c62828;
+        border-left: 4px solid #e57373;
+    }
+
+    .badge.resolved {
+        background-color: #e0f7e9;
+        color: #2e7d32;
+        border-left: 4px solid #66bb6a;
+    }
+
+.status-message,
+.no-records,
+.error {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-radius: 6px;
+}
+
+.btn-container-track {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-btn-track {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .back-btn-track:hover {
+        background-color: #5a6268;
+    }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .grievance-card {
+        padding: 16px;
+    }
+
+    .card-body p {
+        font-size: 14px;
+    }
+
+    .track-header h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,152 @@
+
+.auditor-landing-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #fff;
+    overflow: hidden;
+}
+
+.auditor-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f1f2e;
+    padding: 12px 24px;
+}
+
+.auditor-navbar-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.auditor-signout-btn {
+    background: #ef4444;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+    .auditor-signout-btn:hover {
+        background-color: #dc2626;
+    }
+
+.auditor-link {
+    cursor: pointer;
+    color: #f9fafb;
+    transition: 0.3s;
+}
+
+    .auditor-link:hover {
+        color: #dbeafe;
+    }
+
+.auditor-welcome {
+    color: #facc15;
+}
+
+.auditor-hero-section {
+    flex: 1;
+    display: flex;
+    padding: 40px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.auditor-left {
+    flex: 1;
+}
+
+.auditor-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+    .auditor-title span {
+        color: #facc15;
+    }
+
+.auditor-description {
+    font-size: 1.1rem;
+    margin-top: 16px;
+    color: #e5e7eb;
+}
+
+.auditor-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-track,
+.btn-analytics {
+    padding: 12px 24px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-track {
+    background: white;
+    color: #4f46e5;
+}
+
+    .btn-track:hover {
+        background: #e0e7ff;
+    }
+
+.btn-analytics {
+    background: #a78bfa;
+    color: white;
+}
+
+    .btn-analytics:hover {
+        background: #c4b5fd;
+    }
+
+.auditor-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .auditor-right img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+        opacity: 0.5;
+        border-radius:10%;
+    }
+    
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auditor-hero-section {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .auditor-buttons {
+        justify-content: center;
+    }
+
+    .auditor-title {
+        font-size: 2.2rem;
+    }
+}

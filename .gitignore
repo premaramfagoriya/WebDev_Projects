@@ -1,0 +1,22 @@
+# Node
+node_modules/
+.env
+
+# Build Output
+dist/
+build/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.log
+
+# VS Code
+.vscode/
+
+# Others
+*.DS_Store
+
+.vs/
