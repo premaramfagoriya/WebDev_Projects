@@ -1,12 +1,15 @@
 ﻿import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import plugin from '@vitejs/plugin-react';
+
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
 import { env } from 'process';
 
-const isDev = process.env.NODE_ENV !== 'production';
+// Check if running on Vercel
+const isVercel = !!process.env.VERCEL;
+const isDev = !isVercel && process.env.NODE_ENV !== 'production';
 
 let httpsOptions = false;
 
