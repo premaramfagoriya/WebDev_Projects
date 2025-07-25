@@ -1,6 +1,16 @@
-﻿import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vite';
+﻿import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'node:url';
+
+let https = false;
+if (process.env.NODE_ENV !== 'production') {
+    try {
+        const { httpsOptions } = await import('./https-config.js');
+        https = httpsOptions;
+    } catch (e) {
+        console.warn('HTTPS config failed:', e.message);
+    }
+}
 
 export default defineConfig({
     plugins: [react()],
@@ -10,11 +20,12 @@ export default defineConfig({
         }
     },
     server: {
+        https,
         proxy: {
             '/api': {
-                target: 'https://localhost:7136', // Update if needed
-                secure: false,
-                changeOrigin: true
+                target: 'https://localhost:7136',
+                changeOrigin: true,
+                secure: false
             }
         },
         port: 64033
