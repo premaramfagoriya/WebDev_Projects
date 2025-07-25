@@ -33,5 +33,15 @@ export default defineConfig({
     },
     port: 64033
   },
-  assetsInclude: assetFileExtensions.map(ext => `**/*.${ext}`)
+  assetsInclude: assetFileExtensions.map(ext => `**/*.${ext}`),
+
+  // ✅ Fix for XLSX compatibility on Vercel
+  optimizeDeps: {
+    include: ['xlsx']
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/, /node_modules\/xlsx\/.*/]
+    }
+  }
 });
